@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FoodResQ - Sold Food Listings</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">FoodResQ</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donate.html">Donate Food</a></li>
+      <li><a href="view.html">View Donations</a></li>
+      <li><a href="sell.html">Sell Food</a></li>
+      <li><a href="view-sell.html" class="active">View Sales</a></li>
+    </ul>
+  </header>
+
+  <main class="container">
+    <h2>Food For Sale</h2>
+    <div id="sellList" class="job-list"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 FoodResQ. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    // Display Sells
+    function displaySells(){
+      const sellList = document.getElementById("sellList");
+      let sells = JSON.parse(localStorage.getItem("sells")) || [];
+      sellList.innerHTML = "";
+
+      sells.forEach(item => {
+        const div = document.createElement("div");
+        div.className = "job-card"; // card style from CSS
+        div.innerHTML = `
+          <div>
+            <img src="${item.image}" width="120" alt="${item.foodType}">
+          </div>
+          <div>
+            <h3>${item.foodType}</h3>
+            <p>Quantity: ${item.quantity}</p>
+            <p>Location: ${item.location}</p>
+            <p>Contact: ${item.contact}</p>
+            <p>Expiry: ${item.expiry}</p>
+            <p>Price: ${item.price ? item.price : 'Free / Negotiable'}</p>
+          </div>
+        `;
+        sellList.appendChild(div);
+      });
+    }
+
+    displaySells();
+  </script>
+</body>
+</html>
