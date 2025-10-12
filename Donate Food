@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Donate Food - FoodResQ</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">FoodResQ</div>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="donate.html" class="active">Donate Food</a></li>
+      <li><a href="view.html">View Donations</a></li>
+    </ul>
+  </header>
+
+  <section class="hero" style="background-image: url('images/donate-hero.jpg');">
+    <div class="hero-content">
+      <h1>Donate Excess Food</h1>
+      <p>Share leftover food or sell at a discounted price for the community.</p>
+    </div>
+  </section>
+
+<main class="form-section">
+  <form id="donationForm">
+    <label>Food Type:</label>
+    <input type="text" id="foodType" placeholder="e.g., Rice, Vegetables" required>
+
+    <label>Quantity (No. of people):</label>
+    <input type="number" id="quantity" placeholder="e.g., 50" required>
+
+    <label>Location:</label>
+    <input type="text" id="location" placeholder="City/Street" required>
+
+    <label>Nearby Trust/NGO:</label>
+    <input type="text" id="trust" placeholder="Optional">
+
+    <label>Contact Number:</label>
+    <input type="tel" id="contact" placeholder="e.g., +91 9876543210" required>
+
+    <label>Category:</label>
+    <select id="category">
+      <option value="Donation">Donation</option>
+      <option value="Sale">Sale</option>
+    </select>
+
+    <button type="submit">Submit</button>
+  </form>
+</main>
+
+
+  <footer>
+    <p>&copy; 2025 FoodResQ. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
